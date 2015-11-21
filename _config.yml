@@ -1,0 +1,5 @@
+name: ulusbakerbulusmalari.com
+markdown: redcarpet
+highlighter: pygments
+
+exclude: []

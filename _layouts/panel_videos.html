@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div id="legend">
+  <a href="/index.html">Anasayfa</a> > <a href="./index.html">{{ page.event_title }}</a> >
+  <hr class="dashed">
+  <h3>{{ page.panel_title }}</h3>
+  <p>{{ page.panel_date }}</p>
+  {{ content }}
+</div>
+
+<div id="videos">
+  <ul id="tabs">
+    {% for video in page.videos %}
+    <li><a id="tab{{ forloop.index }}">Video {{ forloop.index }}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% for video in page.videos %}
+  <div class="videowrapper" id="tab{{ forloop.index }}C">
+    <iframe width="760" height="440" src="http://www.youtube.com/embed/{{ video }}" frameborder="0" allowfullscreen></iframe>
+  </div>
+  {% endfor %}
+  <span class='st_facebook_hcount' displayText='Facebook'></span>
+  <span class='st_twitter_hcount' displayText='Tweet'></span>
+  <span class='st__hcount' displayText=''></span>
+  <br>
+</div>
+
+{% include disqus.html %}
